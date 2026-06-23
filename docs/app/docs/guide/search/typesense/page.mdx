@@ -55,10 +55,11 @@ indexNextraToTypesense({
 
 Then, add a `postbuild` script to your `package.json`:
 
-```json filename="package.json" {3}
+```jsonc filename="package.json" {4}
 {
   "scripts": {
-    "postbuild": "npx tsx ./scripts/indexTypesense.ts"
+    // for Node.js < v23.6.0 use `npx tsx scripts/indexTypesense.ts`
+    "postbuild": "node scripts/indexTypesense.ts"
   }
 }
 ```
